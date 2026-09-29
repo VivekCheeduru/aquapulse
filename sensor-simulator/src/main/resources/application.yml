@@ -10,7 +10,7 @@ aquapulse:
     minimumValue: 0.0
     maximumValue: 100.0
     initialValue: 83.4
-    reporting-interval: 1s
+    reporting-interval: 1
 
   - id: SENSOR-1002
     type: PRESSURE
@@ -18,7 +18,7 @@ aquapulse:
     minimumValue: 65
     maximumValue: 100
     initialValue: 91.3
-    reporting-interval: 1s
+    reporting-interval: 1
 
   - id: SENSOR-1003
     type: RAINFALL
@@ -26,7 +26,7 @@ aquapulse:
     minimumValue: 70
     maximumValue: 89
     initialValue: 74
-    reporting-interval: 1s
+    reporting-interval: 1
 
   - id: SENSOR-1004
     type: TEMPERATURE
@@ -34,12 +34,12 @@ aquapulse:
     minimumValue: 81.9
     maximumValue: 99.3
     initialValue: 85.7
-    reporting-interval: 1s
+    reporting-interval: 1
   - id: SENSOR-1005
     type: FLOW_RATE
     location: RESERVIOR-B
     minimumValue: 81
     maximumValue: 93
     initialValue: 85.3
-    reporting-interval: 1s
+    reporting-interval: 1
 

@@ -18,7 +18,7 @@ public class VirtualSensor {
     private final Double minimumValue;
     private final Double maximumValue;
     private Double currValue;
-    private final Duration reportingInterval;
+    private final Long reportingInterval;
 
     public double generateNextValue(){
         Random random=new Random();

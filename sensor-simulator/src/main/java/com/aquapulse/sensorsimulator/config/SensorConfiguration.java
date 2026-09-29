@@ -14,5 +14,5 @@ public class SensorConfiguration {
     private Double minimumValue;
     private Double maximumValue;
     private Double initialValue;
-    private Duration reportingInterval;
+    private Long reportingInterval;
 }

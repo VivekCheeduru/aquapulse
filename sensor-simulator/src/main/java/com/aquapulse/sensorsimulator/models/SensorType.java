@@ -1,7 +1,7 @@
 package com.aquapulse.sensorsimulator.models;
 
 public enum SensorType {
-    WATERLEVEL,
+    WATER_LEVEL,
     PRESSURE,
     FLOW_RATE,
     TEMPERATURE,

@@ -14,12 +14,12 @@ public class SimulatorTestRunner {
     public static void main(String[] args) {
         VirtualSensor sensor=new VirtualSensor(
                 "SENSOR-1001",
-                SensorType.WATERLEVEL,
+                SensorType.WATER_LEVEL,
                 "RESERVIOR-A",
                 60.0,
                 90.1,
                 82.4,
-                Duration.ofSeconds(1)
+                1L
         );
         TelemetryGenerator generator=new TelemetryGenerator(sensor);
        ScheduledExecutorService scheduler=Executors.newScheduledThreadPool(1);
@@ -28,7 +28,7 @@ public class SimulatorTestRunner {
                        System.out.println(generator.generate());
                    },
                    0,
-                   sensor.getReportingInterval().toMillis(),
+                   sensor.getReportingInterval(),
                    TimeUnit.MILLISECONDS
            );
     }

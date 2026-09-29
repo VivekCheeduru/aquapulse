@@ -2,7 +2,8 @@ package com.aquapulse.sensorsimulator.models;
 
 import java.time.Instant;
 
-public record TelemetryEvent(String sensorId,
+public record TelemetryEvent(
+        String sensorId,
                              SensorType sensorType,
                              String location,
                               Instant timestamp,
