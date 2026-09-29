@@ -8,6 +8,7 @@ import lombok.Setter;
 
 import java.time.Duration;
 import java.time.Instant;
+import java.util.List;
 
 @Entity
 @Table(name="sensor")
@@ -25,9 +26,9 @@ public class Sensor {
     private String location;
     @NotNull
     @DecimalMin(value = "0.0")
-    private double minValue;
+    private double minimumValue;
     @NotNull
-    private double maxValue;
+    private double maximumValue;
     @Convert(converter = DurationAttributeConverter.class)
     @Column(nullable = false)
     private Duration reportingInterval;
@@ -37,5 +38,7 @@ public class Sensor {
     private SensorStatus status;
     private Instant createdAt;
     private Instant updatedAt;
+    @OneToMany(mappedBy ="sensor")
+    private List<TelemetryEvent> telemetryEvents;
 
 }

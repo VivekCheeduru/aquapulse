@@ -1,6 +1,8 @@
 package com.aquapulse.sensorregistry.dto;
 
+import com.aquapulse.sensorregistry.models.DurationAttributeConverter;
 import com.aquapulse.sensorregistry.models.SensorType;
+import jakarta.persistence.Convert;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
@@ -19,10 +21,12 @@ public class SensorRequest {
     @NotNull
     private String location;
     @NotNull
-    private Double minValue;
+    private Double minimumValue;
     @NotNull
-    private Double maxValue;
+    private Double maximumValue;
+    @NotNull
+    private Double currValue;
     @Positive
     @NotNull
-    private Long reportingIntervalSeconds;
+    private Long reportingInterval;
 }

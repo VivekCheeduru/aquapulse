@@ -1,7 +1,6 @@
 package com.aquapulse.sensorregistry.service;
 
 import com.aquapulse.sensorregistry.dto.SensorRequest;
-import com.aquapulse.sensorregistry.dto.SensorResponse;
 import com.aquapulse.sensorregistry.models.Sensor;
 
 import java.util.List;

@@ -6,7 +6,6 @@ import com.aquapulse.sensorregistry.exception.SensorNotFoundException;
 import com.aquapulse.sensorregistry.models.Sensor;
 import com.aquapulse.sensorregistry.models.SensorStatus;
 import com.aquapulse.sensorregistry.repository.SensorRepository;
-import lombok.Builder;
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -27,6 +26,7 @@ public class SensorService implements ISensorService{
     @Override
     public Sensor createSensor(SensorRequest request){
         Optional<Sensor> sensorOptional=sensorRepository.findById(request.getSensorId());
+        System.out.println("Checking for sensor ID if already exists or not?"+sensorOptional.isPresent());
         if(sensorOptional.isPresent()){
             throw new SensorAlreadyExistsException("Sensor with ID already exists...");
         }
@@ -34,10 +34,10 @@ public class SensorService implements ISensorService{
         sensor.setSensorId(request.getSensorId());
         sensor.setType(request.getType());
         sensor.setLocation(request.getLocation());
-        sensor.setMinValue(request.getMinValue());
-        sensor.setMaxValue(request.getMaxValue());
+        sensor.setMinimumValue(request.getMinimumValue());
+        sensor.setMaximumValue(request.getMaximumValue());
         sensor.setStatus(SensorStatus.ACTIVE);
-        sensor.setReportingInterval(Duration.ofSeconds(request.getReportingIntervalSeconds()));
+        sensor.setReportingInterval(Duration.ofSeconds(request.getReportingInterval()));
         sensor.setCreatedAt(Instant.now());
         sensor.setUpdatedAt(Instant.now());
         return sensorRepository.save(sensor);
@@ -60,7 +60,7 @@ public class SensorService implements ISensorService{
         newSensor.setStatus(SensorStatus.ACTIVE);
         newSensor.setCreatedAt(oldSensor.getCreatedAt());
         newSensor.setUpdatedAt(Instant.now());
-        newSensor.setReportingInterval(Duration.ofSeconds(request.getReportingIntervalSeconds()));
+        newSensor.setReportingInterval(Duration.ofSeconds(request.getReportingInterval()));
         return sensorRepository.save(newSensor);
     }
 
@@ -68,5 +68,7 @@ public class SensorService implements ISensorService{
     public void deleteSensorById(String sensorId) {
         sensorRepository.deleteById(sensorId);
     }
+
+
 
 }

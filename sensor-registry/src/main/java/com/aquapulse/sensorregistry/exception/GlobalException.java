@@ -63,7 +63,7 @@ public class GlobalException{
                 Instant.now(),
                 HttpStatus.BAD_REQUEST.value(),
                 "MALFORMED REQUEST",
-                "Invalid Request Body",
+                ex.getMessage(),
                 request.getRequestURI()
         );
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).body(response);

@@ -13,9 +13,9 @@ public class SensorResponse {
     private String sensorId;
     private SensorType type;
     private String location;
-    private Double minValue;
-    private Double maxValue;
-    private Long reportingIntervalSeconds;
+    private Double minimumValue;
+    private Double maximumValue;
+    private Long reportingInterval;
     private SensorStatus status;
     private Instant createdAt;
     private Instant updatedAt;
