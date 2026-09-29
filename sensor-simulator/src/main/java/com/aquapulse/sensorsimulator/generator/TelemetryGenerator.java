@@ -16,6 +16,5 @@ public class TelemetryGenerator {
                     sensor.getType(),sensor.getLocation(),
                 Instant.now(),sensor.getCurrValue(),
                 "MTRS");
-
     }
 }

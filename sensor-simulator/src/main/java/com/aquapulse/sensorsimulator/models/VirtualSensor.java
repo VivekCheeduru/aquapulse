@@ -15,9 +15,9 @@ public class VirtualSensor {
     private final String sensorId;
     private final SensorType type;
     private final String location;
-    private final double minimumValue;
-    private final double maximumValue;
-    private double currValue;
+    private final Double minimumValue;
+    private final Double maximumValue;
+    private Double currValue;
     private final Duration reportingInterval;
 
     public double generateNextValue(){
